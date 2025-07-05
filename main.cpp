@@ -18,18 +18,22 @@ int main()
 
   if (choice == 1)
   {
-    const double PI = 3.14159;
-    double radius, area;
+   const double PI = 3.14159;
+    double radius;
+    double radius_squared;
+    double area;
     cout<< "What is the radius of your circle?\n";
       cout<< "Enter radius here :";
     cin>> radius;
     if (radius <= 0)
     {
-    cout << "Enter a number greater than zero and try again.\n";
-    }
-    double radius_squared = pow(radius, 2.0);
-    area = PI / radius_squared;
+    cout << "Enter a number greater than zero and try again." << endl;
+      return 1;
+    } else {
+       radius_squared = radius * radius;
+    area = PI * radius_squared;
     cout<< "The area of the circle is: " << area << endl;
+    }
   }
   else if (choice == 2)
   {
@@ -39,16 +43,20 @@ int main()
     if (Length <= 0)
     {
       cout<< "Enter a number greater than zero, and try agian. \n";
-      
+      return 2;
     }
-    cout<< "What is the width of you rectangle? \n";
-    cin>> Width;
+    else {
+      cout<< "What is the width of you rectangle?\n";
+      cin>> Width;
+    }
     if (Width <= 0)
     {
       cout<< "Enter a number greater than zero and try agian. \n)";
+      return 2;
+    } else {
+      double Area = Length * Width;
+      cout<< "The area of your rectangle is: " << Area << endl;
     }
-    double Area = Length * Width;
-    cout<< "The area of your rectangle is: " << Area << endl;
   }
   else if (choice == 3)
   {
@@ -58,7 +66,28 @@ int main()
     if (base <= 0)
     {
       cout<< "Try again, enter a number greater than zero.\n";
+      return 3;
+    } else {
+      cout<< "Whate is the height of your triangle? \n";
+      cin>> height;
     }
-    cout
+    if (height <= 0)
+    {
+      cout<< "Try agian, enter a number greater than zero. \n";
+      return 3;
+    } else {
+      double area = base * height ;
+      cout<< "The area of your rectangle is; " << area << endl;
+    }
+  }
+  else if (choice < 1 || choice > 4)
+  {
+    cout<< "Invalid choice. Pleae enter a number between 1 and 4";
+    return 0;
+  }
+  else
+  {
+    cout<< "Okay, have a great day!" << endl;
+    return 0;
   }
 }
