@@ -13,7 +13,7 @@ int main ()
   cout<< "\n";
   cout<< "x" << endl;
 cin>> weight;  
-  if (weight < 0 || weight > 20)
+  if (weight <= 0 || weight > 20)
   {
     cout<< "I'm sorry, Fast Freight Shipping limits package to 20kgs or less and they must weigh more than 0kgs." << endl;
   } else if (weight > 0 || weight <= 2) {
